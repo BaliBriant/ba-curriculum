@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Calculator</title>
+	<meta charset="utf-8">
+	<script src="assess.js"></script>
+</head>
+<body>
+	<h1>Grade Calculator</h1>
+	<p>This app takes two numbers: first, the number of correct answers, and second, the total number of questions. It returns the grade percentage and a mark according to the Bhaktivedanta Academy's <a href="http://curriculum.bhaktivedantaacademy.com/wp-content/uploads/2018/01/Computing_Grades.pdf" rel="noopener" target="_blank">grading standards</a>.</p>
+	<div id="grade-calculator">
+		<p><input type="number" name="correct" id="numerator"></p>
+		<p id="out-of">out of</p>
+		<p><input type="number" name="total" id="denominator"></p>
+		<p><button type ="submit" onclick="gradecalc()">submit</button></p>
+		<p id="answer"></p>
+	</div>
+</body>
+</html>
