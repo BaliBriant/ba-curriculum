@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grade Calculator</title>
+    <meta charset="utf-8">
+    <script>
+    var mozilla = {};
+
+    mozilla.round = function(number, precision) {
+        var factor = Math.pow(10, precision);
+        var tempNumber = number * factor;
+        var roundedTempNumber = Math.round(tempNumber);
+        return roundedTempNumber / factor;
+    };
+
+    function mark(percent) {
+        if (percent <= 61.9) {
+            var mark = 'K-';
+        } else if (percent <= 65.9) {
+            var mark = 'K';
+        } else if (percent <= 69.9) {
+            var mark = 'K+';
+        } else if (percent <= 75.9) {
+            var mark = 'M-';
+        } else if (percent <= 81.9) {
+            var mark = 'M';
+        } else if (percent <= 87.9) {
+            var mark = 'M+';
+        } else if (percent <= 91.9) {
+            var mark = 'U-';
+        } else if (percent <= 95.9) {
+            var mark = 'U';
+        } else if (percent > 95.9) {
+            var mark = 'U+';
+        } else {
+            var mark = 'error';
+        }
+        return mark;
+    }
+
+    function grade(numerator, denominator) {
+        var percent = numerator / denominator * 100;
+        var output = mozilla.round(percent, 1) + '% ' + mark(percent);
+        return output;
+    }
+
+    function gradecalc() {
+        var numerator = document.getElementById('numerator').value;
+        var denominator = document.getElementById('denominator').value;
+        document.getElementById('answer').innerHTML = grade(numerator, denominator);
+    }
+    </script>
+</head>
+
+<body>
+    <h1>Grade Calculator</h1>
+    <p>This app takes two numbers: first, the number of correct answers, and second, the total number of questions. It returns the grade percentage and a mark according to the Bhaktivedanta Academy's <a href="http://curriculum.bhaktivedantaacademy.com/wp-content/uploads/2018/01/Computing_Grades.pdf">grading standards</a>.</p>
+    <div id="grade-calculator">
+        <p>
+            <input type="number" name="correct" id="numerator">
+        </p>
+        <p id="out-of">out of</p>
+        <p>
+            <input type="number" name="total" id="denominator">
+        </p>
+        <p>
+            <button type="submit" onclick="gradecalc()">submit</button>
+        </p>
+        <p id="answer"></p>
+    </div>
+</body>
+
+</html>
