@@ -18,24 +18,12 @@ function sandhi(a, b) {
     function areEkatmakas(a, b) {
         var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
         for (let i = 0; i < dvayas.length; i++) {
-            if dvayas[i].includes(a) && dvayas[i].includes(b) {
+            if (dvayas[i].includes(a) && dvayas[i].includes(b)) {
                 return true;
             }
         }
         return false;
     }
-
-
-    if (aEnd in ) {
-
-    } else {
-        return a + " " + b;
-        //return b.charAt(0);
-    }
-}
-
-function areEkatmakas(a, b) {
-    for 
 }
 
 function applySandhi() {  
