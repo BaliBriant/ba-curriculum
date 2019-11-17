@@ -15,60 +15,35 @@ function sandhi(a, b) {
     var uDvaya = ['u', 'ū'];
     var rDvaya = ['ṛ', 'ṝ'];
     var lDvaya = ['ḷ', 'ḹ'];
-
-
-    if (aEnd in ) {
-
+    var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
+    
+    // define functions
+    function areEkatmakas(a, b) {
+        for (let i = 0; i < dvayas.length; i++) {
+            if (dvayas[i].includes(a) && dvayas[i].includes(b)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    function makeTrivikrama(a) {
+        for (let i = 0; i < dvayas.length; i++) {
+            if (dvayas[i].includes(a)) {
+                return dvayas[i][1];
+            }
+        }
+    }
+    
+    // do the work
+    if (areEkatmakas(aEnd, bStart)) {
+        return a.slice(0, -1) + makeTrivikrama(aEnd) + b.slice(1); 
     } else {
         return a + " " + b;
-        //return b.charAt(0);
     }
 }
 
-/*
-function areEkatmakas(first, second) {
-    var ekatmakas = {
-        'a' : 'ā',
-        'i' : 'ī',
-        'u' : 'ū',
-        'ṛ' : 'ṝ',
-        'ḷ' : 'ḹ'
-    }
-    if (ekatmakas.first == second) {
-        return true;
-    }
-}
-
-document.write(areEkatmakas('a', 'ā');
-
-function sandhi(a, b) {
-    // remove whitespace from input
-    var a = a.trim();
-    var b = b.trim();
-
-    // extract connecting letters
-    var aEnd = a.slice(-1);
-    var bStart = b.charAt(0);
-
-    // assign letter groups
-    let sarvesvaras = []
-    let gopalas = []
-    let yadavas = []
-    let ekatmakas = {
-        'a' : 'ā',
-        'i' : 'ī',
-        'u' : 'ū'
-    }
-
-    if (a.slice(-1) == "a" && b.charAt(0) == "a") {
-        return a.slice(0, -1) + "ā" + b.slice(1);
-    } else {
-        return a + " " + b;
-        //return b.charAt(0);
-    }
-}
-*/
-function applySandhi() {
+function applySandhi() {  
     var a = document.getElementById('stringA').value;
     var b = document.getElementById('stringB').value;
      document.getElementById('output').innerHTML = sandhi(a, b);

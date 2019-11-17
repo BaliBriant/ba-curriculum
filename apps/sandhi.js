@@ -14,15 +14,31 @@ function sandhi(a, b) {
     var uDvaya = ['u', 'ū'];
     var rDvaya = ['ṛ', 'ṝ'];
     var lDvaya = ['ḷ', 'ḹ'];
+    var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
     
+    // define functions
     function areEkatmakas(a, b) {
-        var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
         for (let i = 0; i < dvayas.length; i++) {
             if (dvayas[i].includes(a) && dvayas[i].includes(b)) {
                 return true;
             }
         }
         return false;
+    }
+    
+    function makeTrivikrama(a) {
+        for (let i = 0; i < dvayas.length; i++) {
+            if (dvayas[i].includes(a)) {
+                return dvayas[i][1];
+            }
+        }
+    }
+    
+    // do the work
+    if (areEkatmakas(aEnd, bStart)) {
+        return a.slice(0, -1) + makeTrivikrama(aEnd) + b.slice(1); 
+    } else {
+        return a + " " + b;
     }
 }
 
