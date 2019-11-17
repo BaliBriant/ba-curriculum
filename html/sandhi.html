@@ -1,0 +1,80 @@
+<script>
+function sandhi(a, b) {
+    // remove whitespace from input
+    var a = a.trim();
+    var b = b.trim();
+
+    // extract connecting letters
+    var aEnd = a.slice(-1);
+    var bStart = b.charAt(0);
+
+    // assign letter groups
+    var dasavataras = ['a', 'ā', 'i', 'ī', 'u', 'ū', 'ṛ', 'ṝ', 'ḷ', 'ḹ'];
+    var aDvaya = ['a', 'ā'];
+    var iDvaya = ['i', 'ī'];
+    var uDvaya = ['u', 'ū'];
+    var rDvaya = ['ṛ', 'ṝ'];
+    var lDvaya = ['ḷ', 'ḹ'];
+
+
+    if (aEnd in ) {
+
+    } else {
+        return a + " " + b;
+        //return b.charAt(0);
+    }
+}
+
+/*
+function areEkatmakas(first, second) {
+    var ekatmakas = {
+        'a' : 'ā',
+        'i' : 'ī',
+        'u' : 'ū',
+        'ṛ' : 'ṝ',
+        'ḷ' : 'ḹ'
+    }
+    if (ekatmakas.first == second) {
+        return true;
+    }
+}
+
+document.write(areEkatmakas('a', 'ā');
+
+function sandhi(a, b) {
+    // remove whitespace from input
+    var a = a.trim();
+    var b = b.trim();
+
+    // extract connecting letters
+    var aEnd = a.slice(-1);
+    var bStart = b.charAt(0);
+
+    // assign letter groups
+    let sarvesvaras = []
+    let gopalas = []
+    let yadavas = []
+    let ekatmakas = {
+        'a' : 'ā',
+        'i' : 'ī',
+        'u' : 'ū'
+    }
+
+    if (a.slice(-1) == "a" && b.charAt(0) == "a") {
+        return a.slice(0, -1) + "ā" + b.slice(1);
+    } else {
+        return a + " " + b;
+        //return b.charAt(0);
+    }
+}
+*/
+function applySandhi() {
+    var a = document.getElementById('stringA').value;
+    var b = document.getElementById('stringB').value;
+     document.getElementById('output').innerHTML = sandhi(a, b);
+}
+</script>
+<p><input type="text" id="stringA"></p>
+<p><input type="text" id="stringB"></p>
+<p><button type="submit" onclick="applySandhi()">apply</button></p>
+<p id="output"></p>
