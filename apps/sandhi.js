@@ -14,6 +14,16 @@ function sandhi(a, b) {
     var uDvaya = ['u', 'ū'];
     var rDvaya = ['ṛ', 'ṝ'];
     var lDvaya = ['ḷ', 'ḹ'];
+    
+    function areEkatmakas(a, b) {
+        var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
+        for (let i = 0; i < dvayas.length; i++) {
+            if dvayas[i].includes(a) && dvayas[i].includes(b) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     if (aEnd in ) {
@@ -24,7 +34,11 @@ function sandhi(a, b) {
     }
 }
 
-function applySandhi() {
+function areEkatmakas(a, b) {
+    for 
+}
+
+function applySandhi() {  
     var a = document.getElementById('stringA').value;
     var b = document.getElementById('stringB').value;
      document.getElementById('output').innerHTML = sandhi(a, b);
