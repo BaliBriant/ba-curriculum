@@ -15,7 +15,7 @@ function sandhi(a, b) {
     var rDvaya = ['ṛ', 'ṝ'];
     var lDvaya = ['ḷ', 'ḹ'];
     var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
-    
+
     // define functions
     function areEkatmakas(a, b) {
         for (let i = 0; i < dvayas.length; i++) {
@@ -25,7 +25,7 @@ function sandhi(a, b) {
         }
         return false;
     }
-    
+
     function makeTrivikrama(a) {
         for (let i = 0; i < dvayas.length; i++) {
             if (dvayas[i].includes(a)) {
@@ -33,16 +33,23 @@ function sandhi(a, b) {
             }
         }
     }
-    
+
     // do the work
+
+    // दशावतार एकात्मके मिलित्वा त्रिविक्रमः (Hv. 46)
     if (areEkatmakas(aEnd, bStart)) {
-        return a.slice(0, -1) + makeTrivikrama(aEnd) + b.slice(1); 
+        return a.slice(0, -1) + makeTrivikrama(aEnd) + b.slice(1);
     } else {
         return a + " " + b;
     }
+
+    // अद्वयमिद्वये ए (Hv. 48)
+    if (aEnd.includes() && bStart == "i") {
+      
+    }
 }
 
-function applySandhi() {  
+function applySandhi() {
     var a = document.getElementById('stringA').value;
     var b = document.getElementById('stringB').value;
      document.getElementById('output').innerHTML = sandhi(a, b);
