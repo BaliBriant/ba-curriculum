@@ -14,6 +14,8 @@ function sandhi(a, b) {
     var uDvaya = ['u', 'ū'];
     var rDvaya = ['ṛ', 'ṝ'];
     var lDvaya = ['ḷ', 'ḹ'];
+    var eDvaya = ['e', 'ai'];
+    var oDvaya = ['o', 'au'];
     var dvayas = [aDvaya, iDvaya, uDvaya, rDvaya, lDvaya];
 
     // define functions
@@ -39,13 +41,31 @@ function sandhi(a, b) {
     // दशावतार एकात्मके मिलित्वा त्रिविक्रमः (Hv. 46)
     if (areEkatmakas(aEnd, bStart)) {
         return a.slice(0, -1) + makeTrivikrama(aEnd) + b.slice(1);
-    } else {
-        return a + " " + b;
     }
 
     // अद्वयमिद्वये ए (Hv. 48)
-    if (aEnd.includes() && bStart == "i") {
-      
+    else if (aDvaya.includes(aEnd) && iDvaya.includes(bStart)) {
+        return a.slice(0, -1) + "e" + b.slice(1);
+    }
+    
+    // उद्वये ओ (Hv. 50)
+    else if (aDvaya.includes(aEnd) && uDvaya.includes(bStart)) {
+        return a.slice(0, -1) + "o" + b.slice(1);
+    }
+    
+    // ऋद्वये अर् (Hv. 52)
+    else if (aDvaya.includes(aEnd) && rDvaya.includes(bStart)) {
+        return a.slice(0, -1) + "ar" + b.slice(1);
+    }
+    
+    // एद्वये ऐ (Hv. )
+    else if (false) {
+        // pass
+    }
+    
+    // when there's no sandhi
+    else {
+        return a + " " + b;
     }
 }
 
