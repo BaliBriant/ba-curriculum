@@ -69,7 +69,9 @@ function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
 var as = new Dhatu('as', 'to be, exist', '2', 'asti', '', '', '', 'astu', '');
 var budh = new Dhatu('budh', 'to wake up, awaken', '1', 'bodhati', '', 'buddha', '', '', 'boddhum');
 var car = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
+var dah = new Dhatu('dah', 'to burn', '1', 'dahati', 'dhakṣyati', 'dagdha', 'dagdhvā', 'dahatu', 'dagdhum');
 var dā = new Dhatu('dā', 'to give', '3', 'dadāti', 'dāsyati', 'datta', 'dattvā', 'dadātu', 'dātum');
+var dhṛ = new Dhatu('dhṛ', 'to hold', '1', 'dharati', 'dhariṣyati', 'dhṛta', 'dhṛtvā', 'dharatu', 'dhartum');
 
 // List of dhatus
-var listOfDhatus = [as, budh, car, dā];
+var listOfDhatus = [as, budh, car, dah, dā, dhṛ];
