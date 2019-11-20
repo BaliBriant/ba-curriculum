@@ -6,19 +6,19 @@
 
 function dhatu(root) {
   // Takes a dhatu and outputs its forms to an HTML table
-  document.getElementById('root').innerHTML = root.root;
-  document.getElementById('trans').innerHTML = '“' + root.trans + '”';
-  document.getElementById('pres').innerHTML = root.pres;
-  document.getElementById('fut').innerHTML = root.fut;
-  document.getElementById('imp').innerHTML = root.imp;
-  document.getElementById('pp').innerHTML = root.pp;
-  document.getElementById('abs').innerHTML = root.abs;
-  document.getElementById('inf').innerHTML = root.inf;
+  output('root', root.root);
+  output('trans', root.trans);
+  output('pres', root.pres);
+  output('fut', root.fut);
+  output('imp', root.imp);
+  output('pp', root.pp);
+  output('abs', root.abs);
+  output('inf', root.inf);
 }
 
 function output(target, fill) {
-  // Makes
-  document.getElementById(target).innerHTML = fill;
+  // Makes everything better
+  document.getElementById(target).innerHTML = Sanscript.t(fill, 'iast', 'devanagari');
 }
 
 function listDhatus(list) {
