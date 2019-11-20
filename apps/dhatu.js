@@ -18,7 +18,20 @@ function dhatu(root) {
 
 function output(target, fill) {
   // Makes everything better
-  document.getElementById(target).innerHTML = Sanscript.t(fill, 'iast', 'devanagari');
+  document.getElementById(target).innerHTML = (isRoman(target) ? fill : i2d(fill));
+}
+
+function isRoman(field) {
+  if (field == 'root' || field == 'trans') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function i2d(s) {
+  // Takes a string in IAST, returns Devanagari
+  return Sanscript.t(s, 'iast', 'devanagari');
 }
 
 function listDhatus(list) {
