@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="../apps/sanscript.js"></script>
   <script src="../apps/dhatu.js"></script>
+  <style>
+
+    #table-header {
+      text-align: center;
+    }
+
+    #root {
+      font-style: italic;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 <body>
   <table>
-    <tr><th id="root"></th></tr>
+    <tr>
+      <td id="table-header" colspan="6">
+        <span id="root"></span>
+        &emsp;
+        <span id="trans"></span>
+      </td>
+    </tr>
+    <tr>
+      <td id="pres"></td>
+      <td id="fut"></td>
+      <td id="imp"></td>
+      <td id="pp"></td>
+      <td id="abs"></td>
+      <td id="inf"></td>
+    </tr>
   </table>
+  <ul>
+    <li><a onclick="dhatu(car)"><em>car</em></a> (to move, behave, act, live)</li>
+  </ul>
 </body>
 </html>

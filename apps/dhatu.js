@@ -1,6 +1,24 @@
+/*
+    This script is under initial development and is not yet functional.
+*/
+
+
+
 function dhatu(root) {
   // Takes a dhatu and outputs its forms to an HTML table
+  document.getElementById('root').innerHTML = root.root;
+  document.getElementById('trans').innerHTML = '“' + root.trans + '”';
+  document.getElementById('pres').innerHTML = root.pres;
+  document.getElementById('fut').innerHTML = root.fut;
+  document.getElementById('imp').innerHTML = root.imp;
+  document.getElementById('pp').innerHTML = root.pp;
+  document.getElementById('abs').innerHTML = root.abs;
+  document.getElementById('inf').innerHTML = root.inf;
+}
 
+function output(target, fill) {
+  // Makes
+  document.getElementById(target).innerHTML = fill;
 }
 
 function listDhatus(list) {
