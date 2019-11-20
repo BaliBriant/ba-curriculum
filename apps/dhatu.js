@@ -23,7 +23,7 @@ function output(target, fill) {
 function gramlink(dhatu) {
   var root = Sanscript.t(dhatu.root, 'iast', 'hk');
   var link = `https://sanskrit.inria.fr/cgi-bin/SKT/sktconjug.cgi?lex=SH&q=${root}&t=KH&c=${dhatu.cl}&font=roma`;
-  document.getElementById('gramlink').innerHTML = `[<a href="${link}">link</a>]`;
+  document.getElementById('gramlink').innerHTML = `[ <a href="${link}">link</a> ]`;
 }
 
 function isRoman(field) {
