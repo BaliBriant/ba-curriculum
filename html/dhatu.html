@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <script src="../apps/sanscript.js"></script>
   <script src="../apps/dhatu.js"></script>
   <style>
@@ -10,8 +11,18 @@
     }
 
     #root {
-      font-style: italic;
       font-weight: bold;
+    }
+
+    #tenses td {
+      font-size: 0.6em;
+    }
+
+    table, tr, td {
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: center;
     }
 
   </style>
@@ -23,7 +34,17 @@
         <span id="root"></span>
         &emsp;
         <span id="trans"></span>
+        &emsp;
+        <span id="gramLink"></span>
       </td>
+    </tr>
+    <tr id="tenses">
+      <td>present</td>
+      <td>future</td>
+      <td>imperative</td>
+      <td>past participle</td>
+      <td>absolutive</td>
+      <td>infinitive</td>
     </tr>
     <tr>
       <td id="pres"></td>
@@ -34,8 +55,7 @@
       <td id="inf"></td>
     </tr>
   </table>
-  <ul>
-    <li><a onclick="dhatu(car)"><em>car</em></a> (to move, behave, act, live)</li>
-  </ul>
+  <ul id="dhatu-list"></ul>
+  <script>listDhatus()</script>
 </body>
 </html>
