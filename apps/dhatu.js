@@ -2,19 +2,17 @@
     This script is under initial development and is not yet functional.
 */
 
-
-
 function dhatu(root) {
   // Takes a dhatu and outputs its forms to an HTML table
   output('root', root.root);
   output('trans', root.trans);
-  output('gramLink', root.gramLink);
   output('pres', root.pres);
   output('fut', root.fut);
   output('imp', root.imp);
   output('pp', root.pp);
   output('abs', root.abs);
   output('inf', root.inf);
+  gramlink(root);
 }
 
 function output(target, fill) {
@@ -22,8 +20,14 @@ function output(target, fill) {
   document.getElementById(target).innerHTML = (isRoman(target) ? fill : i2d(fill));
 }
 
+function gramlink(dhatu) {
+  var root = Sanscript.t(dhatu.root, 'iast', 'hk');
+  var link = `https://sanskrit.inria.fr/cgi-bin/SKT/sktconjug.cgi?lex=SH&q=${dhatu.root}&t=KH&c=${dhatu.cl}&font=roma`;
+   document.getElementById(gramlink).innerHTML = `[<a href="${link}">link</a>]`;
+}
+
 function isRoman(field) {
-  if (field == 'trans' || field == 'gramLink') {
+  if (field == 'trans') {
     return true;
   } else {
     return false;
@@ -62,13 +66,12 @@ function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
 }
 
 // Dhatu objects
-var as = new Dhatu('as', 'to be, exist', 2, 'asti', '', '', '', 'astu', '');
-as.gramLink = 'https://sanskrit.inria.fr/cgi-bin/SKT/sktconjug.cgi?lex=SH&q=as&t=VH&c=2&font=roma';
-as.defLink = '';
+var as = new Dhatu('as', 'to be, exist', '2', 'asti', '', '', '', 'astu', '');
 
-var car = new Dhatu('car', 'to move, behave, act, live', 1, 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum ');
+var car = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
+
+var budh = new Dhatu('budh', 'to wake up, awaken', '1', 'bodhati', '', 'buddha', '', '', 'boddhum');
 
 
 // List of dhatus
-var listOfDhatus = [as, car];
-// Reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+var listOfDhatus = [as, car, budh];
