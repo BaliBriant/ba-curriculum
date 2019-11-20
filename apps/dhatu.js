@@ -22,8 +22,8 @@ function output(target, fill) {
 
 function gramlink(dhatu) {
   var root = Sanscript.t(dhatu.root, 'iast', 'hk');
-  var link = `https://sanskrit.inria.fr/cgi-bin/SKT/sktconjug.cgi?lex=SH&q=${dhatu.root}&t=KH&c=${dhatu.cl}&font=roma`;
-   document.getElementById(gramlink).innerHTML = `[<a href="${link}">link</a>]`;
+  var link = `https://sanskrit.inria.fr/cgi-bin/SKT/sktconjug.cgi?lex=SH&q=${root}&t=KH&c=${dhatu.cl}&font=roma`;
+  document.getElementById('gramlink').innerHTML = `[<a href="${link}">link</a>]`;
 }
 
 function isRoman(field) {
@@ -67,11 +67,9 @@ function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
 
 // Dhatu objects
 var as = new Dhatu('as', 'to be, exist', '2', 'asti', '', '', '', 'astu', '');
-
-var car = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
-
 var budh = new Dhatu('budh', 'to wake up, awaken', '1', 'bodhati', '', 'buddha', '', '', 'boddhum');
-
+var car = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
+var dā = new Dhatu('dā', 'to give', '3', 'dadāti', 'dāsyati', 'datta', 'dattvā', 'dadātu', 'dātum');
 
 // List of dhatus
-var listOfDhatus = [as, car, budh];
+var listOfDhatus = [as, budh, car, dā];
