@@ -10,15 +10,15 @@ function listDhatus(list) {
 
 // Define an object type for dhatus
 function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
-  this.root     = root;
-  this.trans    = trans;
-  this.cl       = cl;
-  this.pres     = pres;
-  this.fut      = fut;
-  this.pp       = pp;
-  this.abs      = abs;
-  this.imp      = imp;
-  this.inf      = inf;
+  this.root   = root;
+  this.trans  = trans;
+  this.cl     = cl;
+  this.pres   = pres;
+  this.fut    = fut;
+  this.pp     = pp;
+  this.abs    = abs;
+  this.imp    = imp;
+  this.inf    = inf;
 }
 
 // List of dhatus
