@@ -76,7 +76,7 @@ var dā   = new Dhatu('dā', 'to give', '3', 'dadāti', 'dāsyati', 'datta', 'da
 var grah = new Dhatu('grah', 'to seize, grasp, take', '9', 'gṛhṇāti');
 var jval = new Dhatu('jval', 'to burn, set on fire, light, kindle', '1', 'jvalati');
 var kṛ   = new Dhatu('kṛ', 'to do', '8', 'karoti')
-var pṝ   = new Dhatu('pṝ', 'to fill', '9', 'pūrayati');
+var pṝ   = new Dhatu('pṝ', 'to fill', '9', 'pūrayati', 'pūrayiṣyati', 'pūrita', 'pūrayitvā', 'pūrayatu', 'pūrayitum');
 var rac  = new Dhatu('rac', 'to produce, make, construct, cause', '10', 'racayati');
 
 // List of dhatus
