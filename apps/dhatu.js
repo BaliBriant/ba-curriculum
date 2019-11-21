@@ -42,7 +42,6 @@ function i2d(s) {
 function listDhatus() {
   // Outputs list of dhatus to HTML ul
   var list = "";
-  console.log(listOfDhatus);
   for (let i = 0; i < listOfDhatus.length; i++) {
     let dhatu = listOfDhatus[i];
     let next = `<li><a onclick="dhatu(${dhatu.root})"><em>${dhatu.root}</em></a>
@@ -53,7 +52,7 @@ function listDhatus() {
 }
 
 // Define an object type for dhatus
-function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
+function Dhatu(root, trans, cl, pres, fut='', pp='', abs='', imp='', inf='') {
   this.root   = root;
   this.trans  = trans;
   this.cl     = cl;
@@ -66,12 +65,19 @@ function Dhatu(root, trans, cl, pres, fut, pp, abs, imp, inf) {
 }
 
 // Dhatu objects
-var as = new Dhatu('as', 'to be, exist', '2', 'asti', '', '', '', 'astu', '');
+var as   = new Dhatu('as', 'to be, exist', '2', 'asti', '', '', '', 'astu', '');
 var budh = new Dhatu('budh', 'to wake up, awaken', '1', 'bodhati', '', 'buddha', '', '', 'boddhum');
-var car = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
-var dah = new Dhatu('dah', 'to burn', '1', 'dahati', 'dhakṣyati', 'dagdha', 'dagdhvā', 'dahatu', 'dagdhum');
-var dā = new Dhatu('dā', 'to give', '3', 'dadāti', 'dāsyati', 'datta', 'dattvā', 'dadātu', 'dātum');
-var dhṛ = new Dhatu('dhṛ', 'to hold', '1', 'dharati', 'dhariṣyati', 'dhṛta', 'dhṛtvā', 'dharatu', 'dhartum');
+var car  = new Dhatu('car', 'to move, behave, act, live', '1', 'carati', 'cariṣyati', 'carita', 'caritvā', 'caratu', 'caritum');
+var chid = new Dhatu('chid', 'to cut', '7', 'chedayati');
+var cur  = new Dhatu('cur', 'to steal', '10', 'corayati', 'corayiṣyati', 'curita', 'curayitvā', 'corayatu', 'corayitum');
+var dah  = new Dhatu('dah', 'to burn', '1', 'dahati', 'dhakṣyati', 'dagdha', 'dagdhvā', 'dahatu', 'dagdhum');
+var dhṛ  = new Dhatu('dhṛ', 'to hold', '1', 'dharati', 'dhariṣyati', 'dhṛta', 'dhṛtvā', 'dharatu', 'dhartum');
+var dā   = new Dhatu('dā', 'to give', '3', 'dadāti', 'dāsyati', 'datta', 'dattvā', 'dadātu', 'dātum');
+var grah = new Dhatu('grah', 'to seize, grasp, take', '9', 'gṛhṇāti');
+var jval = new Dhatu('jval', 'to burn, set on fire, light, kindle', '1', 'jvalati');
+var kṛ   = new Dhatu('kṛ', 'to do', '8', 'karoti')
+var pṝ   = new Dhatu('pṝ', 'to fill', '9', 'pūrayati');
+var rac  = new Dhatu('rac', 'to produce, make, construct, cause', '10', 'racayati');
 
 // List of dhatus
-var listOfDhatus = [as, budh, car, dah, dā, dhṛ];
+var listOfDhatus = [as, budh, car, chid, cur, dah, dā, dhṛ, grah, jval, kṛ, pṝ, rac];
