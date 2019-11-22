@@ -1,7 +1,3 @@
-/*
-    This script is under initial development and is not yet functional.
-*/
-
 function dhatu(root) {
   // Takes a dhatu and outputs its forms to an HTML table
   output('root', root.root);
@@ -80,4 +76,4 @@ var pṝ   = new Dhatu('pṝ', 'to fill', '9', 'pūrayati', 'pūrayiṣyati', 'p
 var rac  = new Dhatu('rac', 'to produce, make, construct, cause', '10', 'racayati');
 
 // List of dhatus
-var listOfDhatus = [as, budh, car, chid, cur, dah, dā, dhṛ, grah, jval, kṛ, pṝ, rac];
+var listOfDhatus = [as, budh, car, chid, cur, dah, dhṛ, dā, grah, jval, kṛ, pṝ, rac];
