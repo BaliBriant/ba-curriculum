@@ -26,9 +26,8 @@ function ba_students() {
     );
     register_post_type( 'ba-students', $args );
 
-    );
 }
 
-add_action( 'init', 'my_cpt_init' );
+add_action( 'init', 'ba_students' );
 
 ?>
