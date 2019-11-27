@@ -49,15 +49,15 @@ function listDhatus() {
 
 // Define an object type for dhatus
 function Dhatu(root, trans, cl, pres, fut='', pp='', abs='', imp='', inf='') {
-  this.root   = root;
-  this.trans  = trans;
-  this.cl     = cl;
-  this.pres   = pres;
-  this.fut    = fut;
-  this.pp     = pp;
-  this.abs    = abs;
-  this.imp    = imp;
-  this.inf    = inf;
+  this.root  = root;
+  this.trans = trans;
+  this.cl    = cl;
+  this.pres  = pres;
+  this.fut   = fut;
+  this.pp    = pp;
+  this.abs   = abs;
+  this.imp   = imp;
+  this.inf   = inf;
 }
 
 // Dhatu objects
@@ -74,6 +74,8 @@ var jval = new Dhatu('jval', 'to burn, set on fire, light, kindle', '1', 'jvalat
 var kṛ   = new Dhatu('kṛ', 'to do', '8', 'karoti')
 var pṝ   = new Dhatu('pṝ', 'to fill', '9', 'pūrayati', 'pūrayiṣyati', 'pūrita', 'pūrayitvā', 'pūrayatu', 'pūrayitum');
 var rac  = new Dhatu('rac', 'to produce, make, construct, cause', '10', 'racayati');
+var tṝ   = new Dhatu('tṝ', 'to swim, cross over', '1', 'tarati');
+var gam  = new Dhatu('gam', 'to go', '1', 'gacchati');
 
 // List of dhatus
-var listOfDhatus = [as, budh, car, chid, cur, dah, dhṛ, dā, grah, jval, kṛ, pṝ, rac];
+var listOfDhatus = [as, budh, car, chid, cur, dah, dhṛ, dā, gam, grah, jval, kṛ, pṝ, rac, tṝ];
