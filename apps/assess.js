@@ -12,26 +12,26 @@
 
 function mark(percent) {
 	// Takes an integer representing a percentage, returns grade
-	if (percent <= 61.9) {
-		var mark = 'K-';
-	} else if (percent <= 65.9) {
-		var mark = 'K';
-	} else if (percent <= 69.9) {
-		var mark = 'K+';
-	} else if (percent <= 75.9) {
-		var mark = 'M-';
-	} else if (percent <= 81.9) {
-		var mark = 'M';
-	} else if (percent <= 87.9) {
-		var mark = 'M+';
-	} else if (percent <= 91.9) {
-		var mark = 'U-';
-	} else if (percent <= 95.9) {
-		var mark = 'U';
-	} else if (percent > 95.9) {
-		var mark = 'U+';
+	if (percent < 62) {
+		let mark = 'K-';
+	} else if (percent < 66) {
+		let mark = 'K';
+	} else if (percent < 70) {
+		let mark = 'K+';
+	} else if (percent < 76) {
+		let mark = 'M-';
+	} else if (percent < 82) {
+		let mark = 'M';
+	} else if (percent < 88) {
+		let mark = 'M+';
+	} else if (percent < 92) {
+		let mark = 'U-';
+	} else if (percent < 96) {
+		let mark = 'U';
+	} else if (percent > 96) {
+		let mark = 'U+';
 	} else {
-		var mark = 'error';
+		let mark = 'error';
 	}
 	return mark;
 }
