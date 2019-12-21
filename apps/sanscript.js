@@ -221,7 +221,7 @@ function exportSanscriptSingleton(global){
          */
         "iast": {
             "vowels": ["a", "ā", "i", "ī", "u", "ū", "ṛ", "ṝ", "ḷ", "ḹ", "", "e", "ai", "", "o", "au"],
-            "other_marks": ["ṃ", "ḥ", "~"],
+            "other_marks": ["ṁ", "ḥ", "~"],
             "virama": [""],
             "consonants": ["k", "kh", "g", "gh", "ṅ", "c", "ch", "j", "jh", "ñ", "ṭ", "ṭh", "ḍ", "ḍh", "ṇ", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "ḻ", "kṣ", "jñ"],
             "symbols": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "oṃ", "'", "।", "॥"]
