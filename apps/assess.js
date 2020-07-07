@@ -3,7 +3,6 @@
 /*
 	Grade Calculator
 	© Bhaktivedanta Academy. Coded in 2018 by Balaram Das.
-
 	BA's grading standards use K, M, and U for grades. Each grade can be plus, minus, or as is.
 	This app takes a fraction where number of correct answers is the numerator and total questions
 	on a test is the denominator. It then converts the fraction to a percent, assigns a grade to
@@ -13,25 +12,25 @@
 function mark(percent) {
 	// Takes an integer representing a percentage, returns grade
 	if (percent < 62) {
-		let mark = 'K-';
+		var mark = 'K-';
 	} else if (percent < 66) {
-		let mark = 'K';
+		var mark = 'K';
 	} else if (percent < 70) {
-		let mark = 'K+';
+		var mark = 'K+';
 	} else if (percent < 76) {
-		let mark = 'M-';
+		var mark = 'M-';
 	} else if (percent < 82) {
-		let mark = 'M';
+		var mark = 'M';
 	} else if (percent < 88) {
-		let mark = 'M+';
+		var mark = 'M+';
 	} else if (percent < 92) {
-		let mark = 'U-';
+		var mark = 'U-';
 	} else if (percent < 96) {
-		let mark = 'U';
+		var mark = 'U';
 	} else if (percent > 96) {
-		let mark = 'U+';
+		var mark = 'U+';
 	} else {
-		let mark = 'error';
+		var mark = 'error';
 	}
 	return mark;
 }
@@ -53,7 +52,6 @@ function gradecalc() {
 /*
 	Grading Scale
 	© Bhaktivedanta Academy. Coded in 2018 by Balaram Das.
-
 	BA's grading standards specify that a srudent's final academic mark for a semester
 	should be a combination of the student's exam results (weighted 40%) with the
 	results of their continuous assessment throughout the semester (weighted 60%).
@@ -78,7 +76,6 @@ function scale() {
 /*
 	Reading Speed Calculator
 	© Bhaktivedanta Academy. Coded in 2018 by Balaram Das.
-
 	In order to assess a student's reading speed, a teacher may choose a sample
 	text and have the student read it aloud while timing them. The teacher can
 	then use this app, inputting the text's length in words and the time it took
