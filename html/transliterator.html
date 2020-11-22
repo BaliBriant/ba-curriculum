@@ -2,20 +2,26 @@
 <script>
 function transliterate() {
   let text   = document.getElementById('text-to-transliterate').value;
-  let scheme = document.getElementById('schemes').value;
+  let sourceScheme = document.getElementById('source-scheme').value;
+  let targetScheme = document.getElementById('target-scheme').value;
   let output = "";
-  if (scheme == "devanagari-roman") {
-    output = Sanscript.t(text, 'devanagari', 'iast');
-  } else if (scheme == "roman-devanagari") {
-    output = Sanscript.t(text, 'iast', 'devanagari');
-  }
+  output = Sanscript.t(text, sourceScheme, targetScheme);
   document.getElementById('transliteration').innerHTML = output;
 }
 </script>
-<p><select id="schemes">
-  <option value="devanagari-roman">Devanagari to Roman</option>
-  <option value="roman-devanagari">Roman to Devanagari</option>
-</select></p>
-<p><textarea id="text-to-transliterate">Your text here.</textarea></p>
+
+<p>From<br>
+<select id="source-scheme">
+  <option value="iast">IAST</option>
+  <option value="devanagari">Devanagari</option>
+  <option value="hk">KH</option></select>
+</p>
+<p>To<br>
+<select id="target-scheme">
+  <option value="devanagari">Devanagari</option>
+  <option value="iast">IAST</option>
+  <option value="hk">KH</option></select>
+</p>
+<p><textarea id="text-to-transliterate" placeholder="Your text here."></textarea></p>
 <p><button type="submit" onclick="transliterate()">Go</button></p>
 <div id="transliteration"></div>
