@@ -7705,51 +7705,42 @@ function formatDate(d) {
     return day + ' ' + months[eval(month) - 1] + ' ' + year
 }
 
-let date = formatDate(document.getElementById('sankalpa-date').value)
 
-// find line
-let line = ''
-let lines = gcal.split('\n')
-let linesLen = lines.length
-for (let i = 0; i < linesLen; i++) {
-    if (lines[i].includes(date)) {
-        line = lines[i]
+
+function sankalpa() {
+    let date = formatDate(document.getElementById('sankalpa-date').value)
+    // find line
+    let line = ''
+    let lines = gcal.split('\n')
+    let linesLen = lines.length
+    for (let i = 0; i < linesLen; i++) {
+        if (lines[i].includes(date)) {
+            line = lines[i]
+        }
     }
-}
-
-// strip whitespace from string
-let strippedLine = ''
-let lineLen = line.length
-for (let i = 0; i < lineLen; i++) {
-    let lastChar = strippedLine[strippedLine.length - 1]
-    if (line[i] != ' ') {
-        strippedLine += line[i]
+    // strip whitespace from string
+    let strippedLine = ''
+    let lineLen = line.length
+    for (let i = 0; i < lineLen; i++) {
+        let lastChar = strippedLine[strippedLine.length - 1]
+        if (line[i] != ' ') {
+            strippedLine += line[i]
+        }
+        else if (lastChar != ' ') {
+            strippedLine += line[i]
+        }
     }
-    else if (lastChar != ' ') {
-        strippedLine += line[i]
-    }
-}
-
-// split string into elements
-let elements = strippedLine.split(' ')
-let vara      = elements[3]
-let tithi     = elements[4]
-let paksha    = elements[5]
-let nakshatra = elements[7]
-
-/* Kripa to do */
-
-// get month
-
-// year
-
-// get season
-
-
-
-// output sankalpa
-var sankalpa = strippedLine
-
-function printSankalpa() {
+    // split string into elements
+    let elements = strippedLine.split(' ')
+    let vara = elements[3]
+    let tithi = elements[4]
+    let paksha = elements[5]
+    let nakshatra = elements[7]
+    /* Kripa to do */
+    // get month
+    // year
+    // get season
+    // output sankalpa
+    var sankalpa = strippedLine
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
