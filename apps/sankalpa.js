@@ -7705,10 +7705,10 @@ function formatDate(d) {
     return day + ' ' + months[eval(month) - 1] + ' ' + year
 }
 
-
-
 function sankalpa() {
+
     let date = formatDate(document.getElementById('sankalpa-date').value)
+    
     // find line
     let line = ''
     let lines = gcal.split('\n')
@@ -7718,6 +7718,7 @@ function sankalpa() {
             line = lines[i]
         }
     }
+
     // strip whitespace from string
     let strippedLine = ''
     let lineLen = line.length
@@ -7730,17 +7731,21 @@ function sankalpa() {
             strippedLine += line[i]
         }
     }
+
     // split string into elements
     let elements = strippedLine.split(' ')
     let vara = elements[3]
     let tithi = elements[4]
     let paksha = elements[5]
     let nakshatra = elements[7]
+
     /* Kripa to do */
     // get month
     // year
     // get season
     // output sankalpa
+
     var sankalpa = strippedLine
+
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
