@@ -7707,14 +7707,16 @@ function formatDate(d) {
 
 function sankalpa() {
 
-    let date = formatDate(document.getElementById('sankalpa-date').value)
+    let date = document.getElementById('sankalpa-date').value
+    let dateString = formatDate(date)
+    const jsDate = new Date(date)
     
     // find line
     let line = ''
     let lines = gcal.split('\n')
     let linesLen = lines.length
     for (let i = 0; i < linesLen; i++) {
-        if (lines[i].includes(date)) {
+        if (lines[i].includes(dateString)) {
             line = lines[i]
         }
     }
@@ -7734,18 +7736,93 @@ function sankalpa() {
 
     // split string into elements
     let elements = strippedLine.split(' ')
-    let vara = elements[3]
-    let tithi = elements[4]
+
+    // get gaurabda
+    let gaurabda = parseInt(elements[2]) - 1486
+
+    // get ayana
+    let year = elements[2]
+    let ayana = ''
+    if (date > `${year - 1}-12-21` && date < `${year}-06-21`) {
+        ayana = 'uttar'
+    } else if (date > `${year}-06-21` && date < `${year}-12-21`) {
+        ayana = 'dakṣiṇ'
+    }
+
+    // get ritu
+    let ritu = "grishma"
+
+    // get masa
+    let masa = "vasudeva"
+
+    // get paksha
     let paksha = elements[5]
+    if (paksha == 'K') {
+        paksha = 'kṛṣṇa'
+    } else if (paksha == 'G') {
+        paksha = 'gaura'
+    } else {
+        return 1
+    }
+
+    // get rashi
+    let rashi = "simha"
+
+    // get tithi
+    let tithi = elements[4].toLowerCase()
+
+    // get vara
+    let vara = elements[3]
+    switch (vara) {
+        case 'Su':
+            vara = 'ravi'
+            break
+        case 'Mo':
+            vara = 'soma'
+            break
+        case 'Tu':
+            vara = 'maṅgala'
+            break
+        case 'We':
+            vara = 'buddha'
+            break
+        case 'Th':
+            vara = 'guru'
+            break
+        case 'Fr':
+            vara = 'śukra'
+            break
+        case 'Sa':
+            vara = 'śani'
+            break
+    }
+
+    // get nakshatra
     let nakshatra = elements[7]
+    
 
-    /* Kripa to do */
-    // get month
-    // year
-    // get season
-    // output sankalpa
-
-    var sankalpa = strippedLine
+    var sankalpa = `
+        oṁ govinda govinda govinda<br>
+        oṁ tat sat adya brahmaṇo dvitīya parādhe, śrī śveta-varāha kalpe,<br>
+        vaivasvatākhya manvantare, aṣṭaviṁśati kali-yugasya prathama sandhyāyām,<br>
+        brahmaṇo viṁśato vartamānāyām<br>
+        ${gaurabda} gaurabde<br>
+        ${ayana}āyane<br>
+        ${ritu} ṛtau<br>
+        ${masa} māse<br>
+        ${paksha}-pākṣe<br>
+        ${rashi} rāśi-sthite bhāskare<br>
+        ${tithi}-tithau<br>
+        ${vara}-vārānvitāyam<br>
+        ${nakshatra} nakṣatra-saṁyutāyām<br>
+        bhū-maṇḍale jambudvīpe bhārata-varṣe bhārata-khaṇḍe,<br>
+        medhi-bhūtasya sumeror dakṣine, lavanā 'rṇavasyottare koṇe gaṅgāyāḥ pūrva bhāge,<br>
+        śrī māyāpura dhāmni, śrī vigraha-brāhmaṇa-vaiṣṇava-vāhni-sannidhau,<br>
+        śrī śrī rādhā-mādhava-prītyartham, asmin ṥubha-divasi mahā-nitya-homaṁ<br>
+        vayaṁ kariṣyāmahe
+    `
 
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
+
+let date = document.getElementById('sankalpa-date').value
