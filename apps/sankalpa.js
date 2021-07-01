@@ -7718,7 +7718,6 @@ function sankalpa() {
     for (let i = 0; i < linesLen; i++) {
         if (lines[i].slice(0, 11).trim() == dateString) {
             line = lines[i]
-            console.log(line)
         }
     }
 
@@ -7797,26 +7796,26 @@ function sankalpa() {
     console.log(vara)
     switch (vara) {
         case 'Su':
-            vara = 'ravi';
-            break;
+            vara = 'ravi'
+            break
         case 'Mo':
-            vara = 'soma';
-            break;
+            vara = 'soma'
+            break
         case 'Tu':
-            vara = 'maṅgala';
-            break;
+            vara = 'maṅgala'
+            break
         case 'We':
-            vara = 'buddha';
-            break;
+            vara = 'buddha'
+            break
         case 'Th':
-            vara = 'guru';
-            break;
+            vara = 'guru'
+            break
         case 'Fr':
-            vara = 'śukra';
-            break;
+            vara = 'śukra'
+            break
         case 'Sa':
-            vara = 'śani';
-            break;
+            vara = 'śani'
+            break
     }
 
     // get nakshatra
