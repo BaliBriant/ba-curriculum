@@ -7799,13 +7799,43 @@ function sankalpa() {
 
     // get nakshatra
     let nakshatra = elements[7]
+    switch (nakshatra) {
+        case 'Asvini':          nakshatra = 'aśvinī';            break
+        case 'Bharani':         nakshatra = 'bharaṇī';           break
+        case 'Krittika':        nakshatra = 'kṛttikā';           break
+        case 'Rohini':          nakshatra = 'rohiṇī';            break
+        case 'Mrigasira':       nakshatra = 'mṛgaśira';          break
+        case 'Ardra':           nakshatra = 'ārdrā';             break
+        case 'Punarvasu':       nakshatra = 'punarvasu';         break
+        case 'Pusyami':         nakshatra = 'puṣya';             break
+        case 'Aslesa':          nakshatra = 'āśleṣā';            break
+        case 'Magha':           nakshatra = 'maghā';             break
+        case 'Purva-phalguni':  nakshatra = 'pūrva-phalgunī';    break
+        case 'Uttara-phalguni': nakshatra = 'uttara-phalgunī';   break
+        case 'Hasta':           nakshatra = 'hasta';             break
+        case 'Citra':           nakshatra = 'citra';             break
+        case 'Swati':           nakshatra = 'svāti';             break
+        case 'Visakha':         nakshatra = 'viśākhā';           break
+        case 'Anuradha':        nakshatra = 'anurādhā';          break
+        case 'Jyestha':         nakshatra = 'jyeṣṭhā';           break
+        case 'Mula':            nakshatra = 'mūla';              break
+        case 'Purva-asadha':    nakshatra = 'pūrva-āṣāḍhā';      break
+        case 'Uttara-asadha':   nakshatra = 'uttara-āṣāḍhā';     break
+        case 'Sravana':         nakshatra = 'śravaṇa';           break
+        case 'Dhanista':        nakshatra = 'dhaniṣṭha';         break
+        case 'Satabhisa':       nakshatra = 'śatabhiṣa';         break
+        case 'Purva-bhadra':    nakshatra = 'pūrva-bhadrapadā';  break
+        case 'Uttara-bhadra':   nakshatra = 'uttara-bhadrapadā'; break
+        case 'Revati':          nakshatra = 'revatī';            break
+    }
     
-
-    var sankalpa = `
-        oṁ govinda govinda govinda<br>
+    // compile sankalpa
+    let sankalpa = `
+        <p>oṁ govinda govinda govinda<br>
         oṁ tat sat adya brahmaṇo dvitīya parādhe, śrī śveta-varāha kalpe,<br>
         vaivasvatākhya manvantare, aṣṭaviṁśati kali-yugasya prathama sandhyāyām,<br>
-        brahmaṇo viṁśato vartamānāyām<br>
+        brahmaṇo viṁśato vartamānāyām</p>
+        <p>
         ${gaurabda} gaurabde<br>
         ${ayana}āyane<br>
         ${ritu} ṛtau<br>
@@ -7814,14 +7844,16 @@ function sankalpa() {
         ${rashi} rāśi-sthite bhāskare<br>
         ${tithi}-tithau<br>
         ${vara}-vārānvitāyam<br>
-        ${nakshatra} nakṣatra-saṁyutāyām<br>
-        bhū-maṇḍale jambudvīpe bhārata-varṣe bhārata-khaṇḍe,<br>
+        ${nakshatra}-nakṣatra-saṁyutāyām
+        </p>
+        <p>bhū-maṇḍale jambudvīpe bhārata-varṣe bhārata-khaṇḍe,<br>
         medhi-bhūtasya sumeror dakṣine, lavanā 'rṇavasyottare koṇe gaṅgāyāḥ pūrva bhāge,<br>
         śrī māyāpura dhāmni, śrī vigraha-brāhmaṇa-vaiṣṇava-vāhni-sannidhau,<br>
-        śrī śrī rādhā-mādhava-prītyartham, asmin ṥubha-divasi mahā-nitya-homaṁ<br>
-        vayaṁ kariṣyāmahe
+        śrī śrī rādhā-mādhava-prītyartham, asmin śubha-divasi mahā-nitya-homaṁ<br>
+        vayaṁ kariṣyāmahe</p>
     `
 
+    // write out sankalpa to HTML
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
 
