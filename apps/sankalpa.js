@@ -7769,7 +7769,25 @@ function sankalpa() {
     let rashi = "simha"
 
     // get tithi
-    let tithi = elements[4].toLowerCase()
+    let tithi = elements[4]
+    switch (tithi) {
+        case 'Pratipat':  tithi = 'pratipat';  break
+        case 'Dvitiya':   tithi = 'dvitīyā';   break
+        case 'Tritiya':   tithi = 'tṛtīyā';    break
+        case 'Caturthi':  tithi = 'caturthī';  break
+        case 'Pancami':   tithi = 'pañcamī';   break
+        case 'Sasti':     tithi = 'ṣaṣṭhī';    break
+        case 'Saptami':   tithi = 'saptamī';   break
+        case 'Astami':    tithi = 'aṣṭamī';    break
+        case 'Navami':    tithi = 'navamī';    break
+        case 'Dasami':    tithi = 'daśamī';    break
+        case 'Ekadasi':   tithi = 'ekādaśī';   break
+        case 'Dvadasi':   tithi = 'dvādaśī';   break
+        case 'Trayodasi': tithi = 'trayodaśī'; break
+        case 'Caturdasi': tithi = 'caturdaśī'; break
+        case 'Amavasya':  tithi = 'amāvāsyā';  break
+        case 'Purnima':   tithi = 'pūrṇimā';   break
+    }
 
     // get vara
     let vara = elements[3]
@@ -7838,10 +7856,10 @@ function sankalpa() {
         <p>
         ${gaurabda} gaurabde<br>
         ${ayana}āyane<br>
-        ${ritu} ṛtau<br>
-        ${masa} māse<br>
+        ${ritu}-ṛtau<br>
+        ${masa}-māse<br>
         ${paksha}-pākṣe<br>
-        ${rashi} rāśi-sthite bhāskare<br>
+        ${rashi}-rāśi-sthite bhāskare<br>
         ${tithi}-tithau<br>
         ${vara}-vārānvitāyam<br>
         ${nakshatra}-nakṣatra-saṁyutāyām
@@ -7856,5 +7874,3 @@ function sankalpa() {
     // write out sankalpa to HTML
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
-
-let date = document.getElementById('sankalpa-date').value
