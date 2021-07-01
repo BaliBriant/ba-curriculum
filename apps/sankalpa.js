@@ -7716,8 +7716,9 @@ function sankalpa() {
     let lines = gcal.split('\n')
     let linesLen = lines.length
     for (let i = 0; i < linesLen; i++) {
-        if (lines[i].includes(dateString)) {
+        if (lines[i].slice(0, 11).trim() == dateString) {
             line = lines[i]
+            console.log(line)
         }
     }
 
@@ -7733,9 +7734,11 @@ function sankalpa() {
             strippedLine += line[i]
         }
     }
+    console.log(strippedLine)
 
     // split string into elements
-    let elements = strippedLine.split(' ')
+    let elements = strippedLine.trim().split(' ')
+    console.log(elements)
 
     // get gaurabda
     let gaurabda = parseInt(elements[2]) - 1486
@@ -7791,28 +7794,29 @@ function sankalpa() {
 
     // get vara
     let vara = elements[3]
+    console.log(vara)
     switch (vara) {
         case 'Su':
-            vara = 'ravi'
-            break
+            vara = 'ravi';
+            break;
         case 'Mo':
-            vara = 'soma'
-            break
+            vara = 'soma';
+            break;
         case 'Tu':
-            vara = 'maṅgala'
-            break
+            vara = 'maṅgala';
+            break;
         case 'We':
-            vara = 'buddha'
-            break
+            vara = 'buddha';
+            break;
         case 'Th':
-            vara = 'guru'
-            break
+            vara = 'guru';
+            break;
         case 'Fr':
-            vara = 'śukra'
-            break
+            vara = 'śukra';
+            break;
         case 'Sa':
-            vara = 'śani'
-            break
+            vara = 'śani';
+            break;
     }
 
     // get nakshatra
