@@ -7742,6 +7742,21 @@ function get_header(date) {
     }
 }
 
+function get_sankranti(date) {
+    let lines = gcal.split('\n')
+    let linesLen = lines.length
+    let dateString = format_date(date)
+    let sankranti = ''
+    for (let i = 0; i < linesLen; i++) {
+        if (lines[i].includes('Sankranti')) {
+            sankranti = lines[i]
+        }
+        else if (lines[i].slice(0, 11).trim() == dateString) {
+            return strip(sankranti)
+        }
+    }
+}
+
 function get_gaurabda(year) {
     return parseInt(year) - 1486
 }
@@ -7782,8 +7797,23 @@ function get_masa(date) {
     return masa
 }
 
-function get_rashi() {
-    return 'simha'
+function get_rashi(date) {
+    let rashi = get_elements(get_sankranti(date))[1]
+    switch (rashi) {
+        case 'Mesa': rashi = 'meṣa'; break
+        case 'Vrsabha': rashi = 'vṛṣabha'; break
+        case 'Mithuna': rashi = 'mithuna'; break
+        case 'Karka': rashi = 'karka'; break
+        case 'Simha': rashi = 'siṁha'; break
+        case 'Kanya': rashi = 'kanyā'; break
+        case 'Tula': rashi = 'tulā'; break
+        case 'Vrscika': rashi = 'vṛścika'; break
+        case 'Dhanus': rashi = 'dhanū'; break
+        case 'Makara': rashi = 'makara'; break
+        case 'Kumbha': rashi = 'kumbha'; break
+        case 'Mina': rashi = 'mīna'; break
+    }
+    return rashi
 }
 
 function get_paksha(s) {
@@ -7929,7 +7959,7 @@ function sankalpa() {
     let paksha = get_paksha(elements[5])
 
     // get rashi
-    let rashi = get_rashi()
+    let rashi = get_rashi(date)
 
     // get tithi
     let tithi = get_tithi(elements[4])
