@@ -7727,7 +7727,7 @@ function get_elements(s) {
     return s.trim().split(' ')
 }
 
-function get_header(date) {
+function get_month_header(date) {
     let lines = gcal.split('\n')
     let linesLen = lines.length
     let dateString = format_date(date)
@@ -7758,10 +7758,29 @@ function get_sankranti(date) {
 }
 
 function get_gaurabda(date) {
-    return get_elements(get_header(date))[3]
+    return get_elements(get_month_header(date))[3]
 }
 
 function get_ayana(date) {
+    let lines = gcal.split('\n')
+    let linesLen = lines.length
+    let dateString = format_date(date)
+    let header = ''
+    for (let i = 0; i < linesLen; i++) {
+        if (lines[i].includes('Makara Sankranti') || lines[i].includes('Karka Sankranti')) {
+            header = lines[i]
+        }
+        else if (lines[i].slice(0, 11).trim() == dateString) {
+            break
+        }
+    }
+    if (header.includes('Makara')) {
+        return 'uttar'
+    } else if (header.includes('Karka')) {
+        return 'dakṣiṇ'
+    }
+
+    /*
     date_array = date.split('-')
     let year = date_array[0]
     let month = date_array[1]
@@ -7771,6 +7790,8 @@ function get_ayana(date) {
     } else if (date > `${year}-06-21` && date < `${year}-12-21`) {
         return 'dakṣiṇ'
     }
+    */
+
 }
 
 function get_ritu() {
@@ -7778,7 +7799,7 @@ function get_ritu() {
 }
 
 function get_masa(date) {
-    let masa = get_elements(get_header(date))[0]
+    let masa = get_elements(get_month_header(date))[0]
     switch (masa) {
         case 'Kesava':     masa = 'keśava';       break
         case 'Narayana':    masa = 'nārāyaṇa';    break
