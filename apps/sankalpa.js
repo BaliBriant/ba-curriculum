@@ -7995,10 +7995,6 @@ function sankalpa() {
     
     // compile sankalpa
     let sankalpa = `
-        <p>oṁ govinda govinda govinda<br>
-        oṁ tat sat adya brahmaṇo dvitīya parādhe, śrī śveta-varāha kalpe,<br>
-        vaivasvatākhya manvantare, aṣṭaviṁśati kali-yugasya prathama sandhyāyām,<br>
-        brahmaṇo viṁśato vartamānāyām</p>
         <p>
         ${gaurabda} gaurābde<br>
         ${ayana}āyane<br>
@@ -8010,11 +8006,6 @@ function sankalpa() {
         ${vara}-vārānvitāyam<br>
         ${nakshatra}-nakṣatra-saṁyutāyām
         </p>
-        <p>bhū-maṇḍale jambudvīpe bhārata-varṣe bhārata-khaṇḍe,<br>
-        medhi-bhūtasya sumeror dakṣine, lavanā 'rṇavasyottare koṇe gaṅgāyāḥ pūrva bhāge,<br>
-        śrī māyāpura dhāmni, śrī vigraha-brāhmaṇa-vaiṣṇava-vāhni-sannidhau,<br>
-        śrī śrī rādhā-mādhava-prītyartham, asmin śubha-divasi mahā-nitya-homaṁ<br>
-        vayaṁ kariṣyāmahe</p>
     `
 
     // write out sankalpa to HTML
