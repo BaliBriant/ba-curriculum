@@ -7779,23 +7779,25 @@ function get_ayana(date) {
     } else if (header.includes('Karka')) {
         return 'dakṣiṇ'
     }
-
-    /*
-    date_array = date.split('-')
-    let year = date_array[0]
-    let month = date_array[1]
-    let day = date_array[2]
-    if (date > `${year - 1}-12-21` && date < `${year}-06-21`) {
-        return 'uttar'
-    } else if (date > `${year}-06-21` && date < `${year}-12-21`) {
-        return 'dakṣiṇ'
-    }
-    */
-
 }
 
-function get_ritu() {
-    return 'grishma'
+function get_ritu(date) {
+    let masa = get_masa(date)
+    switch (masa) {
+        case 'keśava':
+        case 'nārāyaṇa': return 'hemanta'
+        case 'mādhava': 
+        case 'govinda': return 'śiśira'
+        case 'viṣṇu': 
+        case 'madhusūdana': return 'vasanta'
+        case 'trivikrama': 
+        case 'vāmana': return 'grīṣma'
+        case 'śrīdhara': 
+        case 'hṛṣīkeśa': return 'varṣā'
+        case 'padmanābha':
+        case 'puruṣottama':
+        case 'dāmodara': return 'śarada'
+    }
 }
 
 function get_masa(date) {
@@ -7971,7 +7973,7 @@ function sankalpa() {
     let ayana = get_ayana(date)
 
     // get ritu
-    let ritu = get_ritu()
+    let ritu = get_ritu(date)
 
     // get masa
     let masa = get_masa(date)
