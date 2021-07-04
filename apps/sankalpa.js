@@ -7785,25 +7785,25 @@ function get_ritu(date) {
     let masa = get_masa(date)
     switch (masa) {
         case 'keśava':
-        case 'nārāyaṇa': return 'hemanta'
+        case 'nārāyaṇa':    return 'hemanta'
         case 'mādhava': 
-        case 'govinda': return 'śiśira'
+        case 'govinda':     return 'śiśira'
         case 'viṣṇu': 
         case 'madhusūdana': return 'vasanta'
         case 'trivikrama': 
-        case 'vāmana': return 'grīṣma'
+        case 'vāmana':      return 'grīṣma'
         case 'śrīdhara': 
-        case 'hṛṣīkeśa': return 'varṣā'
+        case 'hṛṣīkeśa':    return 'varṣā'
         case 'padmanābha':
         case 'puruṣottama':
-        case 'dāmodara': return 'śarada'
+        case 'dāmodara':    return 'śarada'
     }
 }
 
 function get_masa(date) {
     let masa = get_elements(get_month_header(date))[0]
     switch (masa) {
-        case 'Kesava':     masa = 'keśava';       break
+        case 'Kesava':      masa = 'keśava';      break
         case 'Narayana':    masa = 'nārāyaṇa';    break
         case 'Madhava':     masa = 'mādhava';     break
         case 'Govinda':     masa = 'govinda';     break
