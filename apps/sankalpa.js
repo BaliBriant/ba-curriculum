@@ -7757,8 +7757,8 @@ function get_sankranti(date) {
     }
 }
 
-function get_gaurabda(year) {
-    return parseInt(year) - 1486
+function get_gaurabda(date) {
+    return get_elements(get_header(date))[3]
 }
 
 function get_ayana(date) {
@@ -7944,7 +7944,7 @@ function sankalpa() {
     console.log(elements)
 
     // get gaurabda
-    let gaurabda = get_gaurabda(elements[2])
+    let gaurabda = get_gaurabda(date)
 
     // get ayana
     let ayana = get_ayana(date)
