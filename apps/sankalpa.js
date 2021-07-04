@@ -7705,74 +7705,68 @@ function formatDate(d) {
     return day + ' ' + months[eval(month) - 1] + ' ' + year
 }
 
-function sankalpa() {
-
-    let date = document.getElementById('sankalpa-date').value
-    let dateString = formatDate(date)
-    const jsDate = new Date(date)
-    
-    // find line
-    let line = ''
-    let lines = gcal.split('\n')
-    let linesLen = lines.length
-    for (let i = 0; i < linesLen; i++) {
-        if (lines[i].slice(0, 11).trim() == dateString) {
-            line = lines[i]
-        }
-    }
-
-    // strip whitespace from string
-    let strippedLine = ''
-    let lineLen = line.length
-    for (let i = 0; i < lineLen; i++) {
-        let lastChar = strippedLine[strippedLine.length - 1]
-        if (line[i] != ' ') {
-            strippedLine += line[i]
+function strip(s) {
+    /*
+     * Takes a string, returns that string with no extra spaces
+     */
+    let stripped = ''
+    let len = s.length
+    for (let i = 0; i < len; i++) {
+        let lastChar = stripped[stripped.length - 1]
+        if (s[i] != ' ') {
+            stripped += s[i]
         }
         else if (lastChar != ' ') {
-            strippedLine += line[i]
+            stripped += s[i]
         }
     }
-    console.log(strippedLine)
+    return stripped
+}
 
-    // split string into elements
-    let elements = strippedLine.trim().split(' ')
-    console.log(elements)
+function get_gaurabda(year) {
+    return parseInt(year) - 1486
+}
 
-    // get gaurabda
-    let gaurabda = parseInt(elements[2]) - 1486
-
-    // get ayana
-    let year = elements[2]
-    let ayana = ''
+function get_ayana(date) {
+    date_array = date.split('-')
+    let year = date_array[0]
+    let month = date_array[1]
+    let day = date_array[2]
     if (date > `${year - 1}-12-21` && date < `${year}-06-21`) {
-        ayana = 'uttar'
+        return 'uttar'
     } else if (date > `${year}-06-21` && date < `${year}-12-21`) {
-        ayana = 'dakṣiṇ'
+        return 'dakṣiṇ'
     }
+}
 
-    // get ritu
-    let ritu = "grishma"
+function get_ritu() {
+    return 'grishma'
+}
 
-    // get masa
-    let masa = "vasudeva"
+function get_masa() {
+    return 'vamana'
+}
 
-    // get paksha
-    let paksha = elements[5]
-    if (paksha == 'K') {
-        paksha = 'kṛṣṇa'
-    } else if (paksha == 'G') {
-        paksha = 'gaura'
+function get_rashi() {
+    return 'simha'
+}
+
+function get_paksha(s) {
+    if (s == 'K') {
+        return 'kṛṣṇa'
+    } else if (s == 'G') {
+        return 'gaura'
     } else {
         return 1
     }
+}
 
-    // get rashi
-    let rashi = "simha"
-
-    // get tithi
-    let tithi = elements[4]
-    switch (tithi) {
+function get_tithi(s) {
+    /*
+     * Takes tithi name from GCal (s), returns the proper diacritical form
+     */
+    let tithi = ''
+    switch (s) {
         case 'Pratipat':  tithi = 'pratipat';  break
         case 'Dvitiya':   tithi = 'dvitīyā';   break
         case 'Tritiya':   tithi = 'tṛtīyā';    break
@@ -7790,11 +7784,15 @@ function sankalpa() {
         case 'Amavasya':  tithi = 'amāvāsyā';  break
         case 'Purnima':   tithi = 'pūrṇimā';   break
     }
+    return tithi
+}
 
-    // get vara
-    let vara = elements[3]
-    console.log(vara)
-    switch (vara) {
+function get_vara(s) {
+    /*
+     * Takes vara name from GCal (s), returns the proper diacritical form
+     */
+    let vara = ''
+    switch (s) {
         case 'Su':
             vara = 'ravi'
             break
@@ -7817,10 +7815,15 @@ function sankalpa() {
             vara = 'śani'
             break
     }
+    return vara
+}
 
-    // get nakshatra
-    let nakshatra = elements[7]
-    switch (nakshatra) {
+function get_nakshatra(s) {
+    /*
+     * Takes nakshatra name from GCal (s), returns the proper diacritical form
+     */
+    let nakshatra = ''
+    switch (s) {
         case 'Asvini':          nakshatra = 'aśvinī';            break
         case 'Bharani':         nakshatra = 'bharaṇī';           break
         case 'Krittika':        nakshatra = 'kṛttikā';           break
@@ -7849,6 +7852,58 @@ function sankalpa() {
         case 'Uttara-bhadra':   nakshatra = 'uttara-bhadrapadā'; break
         case 'Revati':          nakshatra = 'revatī';            break
     }
+    return nakshatra
+}
+
+function sankalpa() {
+
+    let date = document.getElementById('sankalpa-date').value
+    let dateString = formatDate(date)
+    
+    // find line
+    let line = ''
+    let lines = gcal.split('\n')
+    let linesLen = lines.length
+    for (let i = 0; i < linesLen; i++) {
+        if (lines[i].slice(0, 11).trim() == dateString) {
+            line = lines[i]
+        }
+    }
+
+    // strip whitespace from string
+    let strippedLine = strip(line)
+    console.log(strippedLine)
+
+    // split string into elements
+    let elements = strippedLine.trim().split(' ')
+    console.log(elements)
+
+    // get gaurabda
+    let gaurabda = get_gaurabda(elements[2])
+
+    // get ayana
+    let ayana = get_ayana(date)
+
+    // get ritu
+    let ritu = get_ritu()
+
+    // get masa
+    let masa = get_masa()
+
+    // get paksha
+    let paksha = get_paksha(elements[5])
+
+    // get rashi
+    let rashi = get_rashi()
+
+    // get tithi
+    let tithi = get_tithi(elements[4])
+
+    // get vara
+    let vara = get_vara(elements[3])
+
+    // get nakshatra
+    let nakshatra = get_nakshatra(elements[7])
     
     // compile sankalpa
     let sankalpa = `
@@ -7877,3 +7932,4 @@ function sankalpa() {
     // write out sankalpa to HTML
     document.getElementById('sankalpa-output').innerHTML = sankalpa
 }
+
