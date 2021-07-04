@@ -7966,31 +7966,31 @@ function sankalpa() {
     let elements = get_elements(strippedLine)
     console.log(elements)
 
-    // get gaurabda
+    // gaurabda
     let gaurabda = get_gaurabda(date)
 
-    // get ayana
+    // ayana
     let ayana = get_ayana(date)
 
-    // get ritu
+    // ritu
     let ritu = get_ritu(date)
 
-    // get masa
+    // masa
     let masa = get_masa(date)
 
-    // get paksha
+    // paksha
     let paksha = get_paksha(elements[5])
 
-    // get rashi
+    // rashi
     let rashi = get_rashi(date)
 
-    // get tithi
+    // tithi
     let tithi = get_tithi(elements[4])
 
-    // get vara
+    // vara
     let vara = get_vara(elements[3])
 
-    // get nakshatra
+    // nakshatra
     let nakshatra = get_nakshatra(elements[7])
     
     // compile sankalpa
