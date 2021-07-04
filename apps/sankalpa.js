@@ -7780,18 +7780,18 @@ function get_ritu() {
 function get_masa(date) {
     let masa = get_elements(get_header(date))[0]
     switch (masa) {
-        case 'Kesava': masa = 'keśava'; break
-        case 'Narayana': masa = 'nārāyaṇa'; break
-        case 'Madhava': masa = 'mādhava'; break
-        case 'Govinda': masa = 'govinda'; break
-        case 'Visnu': masa = 'viṣṇu'; break
+        case 'Kesava':     masa = 'keśava';       break
+        case 'Narayana':    masa = 'nārāyaṇa';    break
+        case 'Madhava':     masa = 'mādhava';     break
+        case 'Govinda':     masa = 'govinda';     break
+        case 'Visnu':       masa = 'viṣṇu';       break
         case 'Madhusudana': masa = 'madhusūdana'; break
-        case 'Trivikrama': masa = 'trivikrama'; break
-        case 'Vamana': masa = 'vāmana'; break
-        case 'Sridhara': masa = 'śrīdhara'; break
-        case 'Hrsikesa': masa = 'hṛṣīkeśa'; break
-        case 'Padmanabha': masa = 'padmanābha'; break
-        case 'Damodara': masa = 'dāmodara'; break
+        case 'Trivikrama':  masa = 'trivikrama';  break
+        case 'Vamana':      masa = 'vāmana';      break
+        case 'Sridhara':    masa = 'śrīdhara';    break
+        case 'Hrsikesa':    masa = 'hṛṣīkeśa';    break
+        case 'Padmanabha':  masa = 'padmanābha';  break
+        case 'Damodara':    masa = 'dāmodara';    break
         case 'Purusottama-adhika': masa = 'puruṣottama'; break
     }
     return masa
@@ -7800,18 +7800,18 @@ function get_masa(date) {
 function get_rashi(date) {
     let rashi = get_elements(get_sankranti(date))[1]
     switch (rashi) {
-        case 'Mesa': rashi = 'meṣa'; break
+        case 'Mesa':    rashi = 'meṣa';    break
         case 'Vrsabha': rashi = 'vṛṣabha'; break
         case 'Mithuna': rashi = 'mithuna'; break
-        case 'Karka': rashi = 'karka'; break
-        case 'Simha': rashi = 'siṁha'; break
-        case 'Kanya': rashi = 'kanyā'; break
-        case 'Tula': rashi = 'tulā'; break
+        case 'Karka':   rashi = 'karka';   break
+        case 'Simha':   rashi = 'siṁha';   break
+        case 'Kanya':   rashi = 'kanyā';   break
+        case 'Tula':    rashi = 'tulā';    break
         case 'Vrscika': rashi = 'vṛścika'; break
-        case 'Dhanus': rashi = 'dhanū'; break
-        case 'Makara': rashi = 'makara'; break
-        case 'Kumbha': rashi = 'kumbha'; break
-        case 'Mina': rashi = 'mīna'; break
+        case 'Dhanus':  rashi = 'dhanū';   break
+        case 'Makara':  rashi = 'makara';  break
+        case 'Kumbha':  rashi = 'kumbha';  break
+        case 'Mina':    rashi = 'mīna';    break
     }
     return rashi
 }
