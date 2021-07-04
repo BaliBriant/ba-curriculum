@@ -8000,7 +8000,7 @@ function sankalpa() {
         vaivasvatākhya manvantare, aṣṭaviṁśati kali-yugasya prathama sandhyāyām,<br>
         brahmaṇo viṁśato vartamānāyām</p>
         <p>
-        ${gaurabda} gaurabde<br>
+        ${gaurabda} gaurābde<br>
         ${ayana}āyane<br>
         ${ritu}-ṛtau<br>
         ${masa}-māse<br>
